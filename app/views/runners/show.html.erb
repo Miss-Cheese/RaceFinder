@@ -4,12 +4,10 @@ Name: <%= @runner.name %><br><br>
 Gender: <%= @runner.gender %><br><br>
 Birthday:<%= @runner.birthday %><br><br>
 Location: <%= @runner.location_city %>, <%= @runner.location_country %><br><br>
-Experience Level: <%= @runner.experience_level %>
+Experience Level: <%= @runner.experience_level %><br><br>
 
-<div style="background-color:red">
 <%= button_to "EDIT", edit_runner_path, method: :get %>
 <%= button_to "DELETE", runner_path(@runner), method: :delete %>
-</div>
 
 <hr>
 <%= link_to 'Back to all runners', runners_path %>

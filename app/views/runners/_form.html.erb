@@ -11,28 +11,22 @@
 
 <%= form_for @runner do |f| %>
     <p>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        Name: <%= f.text_field :name %>
     </p>
     <p>
-        <%= f.label :gender %>
-        <%= f.text_field :gender %>
+        Gender: <%= f.text_field :gender %>
     </p>
     <p>
-        <%= f.label :birthday %>
-        <%= f.text_field :birthday %>
+        Birthday: <%= f.text_field :birthday %>
     </p>
     <p>
-        <%= f.label :location_city %>
-        <%= f.text_field :location_city %>
+        City: <%= f.text_field :location_city %>
     </p>
     <p>
-        <%= f.label :location_country %>
-        <%= f.text_field :location_country %>
+        Country: <%= f.text_field :location_country %>
     </p>
     <p>
-        <%= f.label :experience_level %>
-        <%= f.text_field :experience_level %>
+        Experience Level: <%= f.text_field :experience_level %>
     </p>
     <p>
         <%= f.submit %>
