@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   resources :races
   resources :runners
 
-  # root 'runners#welcome'
-  # get 'signin', to: "runners#signin"
-  # get 'home', to: "runners#home"
-  # get 'signout', to: "runners#signout"
-  # post 'signin', to: "runners#after_signin"
+
+   root 'sessions#welcome'
+   get '/login', to: "sessions#welcome"
+   post '/login', to: "sessions#create"
+   get 'home', to: "sessions#home"
+   get '/logout', to: "sessions#destroy"
+   post 'create', to: "sessions#after_signin"
 
 end
