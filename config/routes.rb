@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
 
    root 'sessions#welcome'
+   get '/welcome', to: "sessions#welcome"
    get '/login', to: "sessions#welcome"
    post '/login', to: "sessions#create"
-   get 'home', to: "sessions#home"
+   get '/home', to: "sessions#home"
    get '/logout', to: "sessions#destroy"
-   post 'create', to: "sessions#after_signin"
-
+   post '/logout', to: "sessions#destroy"
+   
 end
