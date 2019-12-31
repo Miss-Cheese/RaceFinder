@@ -23,7 +23,6 @@ class RunnersController < ApplicationController
     end
 
     def profile
-        
         @runner = Runner.find_by(name: session[:name])
     end
 
