@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
         if params[:name] && params[:name] != ''
             session[:name] = params[:name]
             redirect_to "/home"
-        # else
-        #     redirect_to "welcome" 
+        else
+            redirect_to "/welcome" 
         end
     end
 
     def home
-        redirect_to "welcome" unless session[:name]
+        redirect_to "/welcome" unless session[:name]
     end
 
     def current_user
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :name
-        redirect_to "welcome"
+        redirect_to "/welcome"
     end
 end
