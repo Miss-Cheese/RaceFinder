@@ -22,6 +22,11 @@ class RunnersController < ApplicationController
         @runners = Runner.all
     end
 
+    def profile
+        
+        @runner = Runner.find_by(name: session[:name])
+    end
+
     def show
         @runner = Runner.find(params[:id])
     end

@@ -18,10 +18,6 @@ class SessionsController < ApplicationController
         redirect_to "/welcome" unless session[:name]
     end
 
-    def current_user
-        session[:name]
-    end
-
     def destroy
         session.delete :name
         redirect_to "/welcome"

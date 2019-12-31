@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :runner_races
   resources :training_plans
   resources :races
-  resources :runners
+  resources :runners, except: [:new]
 
 
    root 'sessions#welcome'
@@ -12,5 +12,6 @@ Rails.application.routes.draw do
    get '/home', to: "sessions#home"
    get '/logout', to: "sessions#destroy"
    post '/logout', to: "sessions#destroy"
-   
+   get '/signup', to: 'runners#new'
+   get '/profile', to: 'runners#profile'
 end
