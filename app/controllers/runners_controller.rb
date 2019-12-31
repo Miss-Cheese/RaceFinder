@@ -16,6 +16,7 @@ class RunnersController < ApplicationController
     #         redirect_to signin_path
     #     end
     # end
+    
 
     def index
         @runners = Runner.all
