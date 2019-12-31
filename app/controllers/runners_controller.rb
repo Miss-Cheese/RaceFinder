@@ -1,29 +1,10 @@
 class RunnersController < ApplicationController
     
-    # def welcome
-    # end
-
-    # def signin
-    # end
-
-    # def after_signin
-    #     @runner = Runner.find_by(params[:username])
-    #     if @runner.valid?
-    #         session[:runner_id] = @runner.id
-    #         redirect_to home_path
-    #     else
-    #         flash[:messages] = @runner.errors.full_messages
-    #         redirect_to signin_path
-    #     end
-    # end
-    
-
     def index
         @runners = Runner.all
     end
 
     def profile
-        
         @runner = Runner.find_by(name: session[:name])
     end
 
