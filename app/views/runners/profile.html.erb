@@ -7,6 +7,14 @@ Location: <%= @runner.location_city %>, <%= @runner.location_country %><br><br>
 Experience Level: <%= @runner.experience_level %><br><br>
 
 <%= button_to "EDIT", edit_runner_path(@runner), method: :get %>
-<%= button_to "DELETE", runner_path(@runner), method: :delete %>
+<%= button_to "DELETE", runner_path(@runner), method: :delete %><br>
+
+Races runner has signed up for:
+<ul>
+<% @runner.races.each do |race| %>
+    <li><%= link_to race.name, race_path(race) %></li>
+    <% end %>
+    </ul>
 
 <hr>
+<%= link_to 'Back to home', home_path %>
