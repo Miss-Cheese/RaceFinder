@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
+    
     def welcome
     end
-
-    # def new
-    # end
 
     def create
         if params[:name] && params[:name] != ''
