@@ -1,0 +1,2 @@
+class RunnerPlansController < ApplicationController
+end
