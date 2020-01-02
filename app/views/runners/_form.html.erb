@@ -17,7 +17,7 @@
         Gender: <%= f.text_field :gender %>
     </p>
     <p>
-        Birthday: <%= f.text_field :birthday %>
+        Birthday: <%= f.date_select :birthday, :start_year=>1900 %>
     </p>
     <p>
         City: <%= f.text_field :location_city %>

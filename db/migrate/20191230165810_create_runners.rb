@@ -3,7 +3,7 @@ class CreateRunners < ActiveRecord::Migration[6.0]
     create_table :runners do |t|
       t.string :name
       t.string :gender
-      t.string :birthday
+      t.date :birthday
       t.string :location_city
       t.string :location_country
       t.string :experience_level
