@@ -19,4 +19,5 @@ Rails.application.routes.draw do
    post '/races/:id/sign_user_up', to: 'races#sign_current_user_up_for_race'
    get '/training_plans/:id/sign_user_up', to: 'training_plans#sign_current_user_up_for_plan'
    post '/training_plans/:id/sign_user_up', to: 'training_plans#sign_current_user_up_for_plan'
+   get '/training_plans/dashboard.html.erb', to: 'training_plans#dashboard'
 end
