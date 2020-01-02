@@ -1,9 +1,10 @@
 <h3> Congratulations you just signed up for a race! </h3>
 <h5> Would you like to sign up for a training plan? </h5>
-<h5> Here are the available training plans for this race </h5>
+<h5> Here are the available training plans for this race: </h5>
+
 
 <ul>
 <% @race.training_plans.each do |training_plan| %>
-    <li><%= link_to training_plan, training_plan_path(training_plan) %></li>
-    <% end %>
+    <li><%= link_to training_plan.name, training_plan_path(training_plan) %></li>
+<% end %>
 </ul>
