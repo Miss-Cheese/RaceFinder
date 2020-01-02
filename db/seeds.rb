@@ -10,10 +10,10 @@ Runner.destroy_all
 Race.destroy_all
 TrainingPlan.destroy_all
 
-runner1 = Runner.create(name:"Natalie", gender:"female", birthday:"1984-10-02", location_city:"New York", location_country:"USA", experience_level:"intermediate")
-runner2 = Runner.create(name:"Lyubava", gender:"female", birthday:"1986-04-07", location_city:"New York", location_country:"USA", experience_level:"intermediate")
-runner3 = Runner.create(name:"Jeff", gender:"male", birthday:"1987-11-04", location_city:"New York", location_country:"USA", experience_level:"intermediate")
-runner4 = Runner.create(name:"Natasha", gender:"female", birthday:"1982-02-09", location_city:"Moscow", location_country:"Russia", experience_level:"advanced")
+#runner1 = Runner.create(name:"Natalie", gender:"female", birthday:"1984-10-02", location_city:"New York", location_country:"USA", experience_level:"intermediate")
+#runner2 = Runner.create(name:"Lyubava", gender:"female", birthday:"1986-04-07", location_city:"New York", location_country:"USA", experience_level:"intermediate")
+#runner3 = Runner.create(name:"Jeff", gender:"male", birthday:"1987-11-04", location_city:"New York", location_country:"USA", experience_level:"intermediate")
+#runner4 = Runner.create(name:"Natasha", gender:"female", birthday:"1982-02-09", location_city:"Moscow", location_country:"Russia", experience_level:"advanced")
 
 race1 = Race.create(name:"New York City Marathon", race_type:"marathon", date:"2020-11-01", location:"New York, USA")
 race2 = Race.create(name:"Mini 10K", race_type:"10K", date:"2020-06-04", location:"New York, USA")
