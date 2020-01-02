@@ -8,6 +8,9 @@ class TrainingPlansController < ApplicationController
         @trainingplan = TrainingPlan.find(params[:id])
     end
 
+    def dashboard
+    end
+
     def sign_current_user_up_for_plan
         @trainingplan = TrainingPlan.find(params[:id])
         byebug
