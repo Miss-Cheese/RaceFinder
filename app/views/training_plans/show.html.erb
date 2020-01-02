@@ -7,5 +7,7 @@ Duration: <%= @trainingplan.duration %><br><br>
 
 <!-- button to choose this training plan -->
 
+<%= button_to 'Choose this training plan!', "/training_plans/#{@trainingplan.id}/sign_user_up" %>
+
 <hr>
 <%= link_to 'Back to all training plans', training_plans_path %>

@@ -11,7 +11,7 @@ class RacesController < ApplicationController
     def sign_current_user_up_for_race
         @race = Race.find(params[:id])
         @race.sign_up_for_race(current_user)
-        redirect_to runner_path(current_user)
+        redirect_to "/training_plans/:id/sign_user_up"
     end
 
 end
