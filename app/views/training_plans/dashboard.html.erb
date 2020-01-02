@@ -4,6 +4,6 @@
 
 <ul>
 <% @race.training_plans.each do |training_plan| %>
-    <li><%= link_to training_plan, training_plan_path(training_plan) %></li>
+    <li><%= link_to training_plan.name, training_plan_path(training_plan) %></li>
     <% end %>
 </ul>
