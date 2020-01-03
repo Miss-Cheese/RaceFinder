@@ -19,6 +19,6 @@ class RacesController < ApplicationController
         @race = Race.find(params[:id])
         @runner = current_user
         @runner.races.delete(@race)
-        redirect_to runner_path
+        redirect_to profile_path
     end
 end

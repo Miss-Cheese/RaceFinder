@@ -14,7 +14,7 @@ Rails.application.routes.draw do
    get '/logout', to: "sessions#destroy"
    post '/logout', to: "sessions#destroy"
    get '/signup', to: 'runners#new'
-   get '/profile/:id', to: 'runners#profile'
+   get '/profile', to: 'runners#profile'
    get '/sessions/home', to: 'sessions#home'
 
    post '/races/:id/sign_user_up', to: 'races#sign_current_user_up_for_race'
