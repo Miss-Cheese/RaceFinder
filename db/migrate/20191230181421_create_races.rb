@@ -5,6 +5,7 @@ class CreateRaces < ActiveRecord::Migration[6.0]
       t.string :race_type
       t.string :date
       t.string :location
+      t.string :img_url
 
       t.timestamps
     end

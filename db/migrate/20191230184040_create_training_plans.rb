@@ -5,7 +5,8 @@ class CreateTrainingPlans < ActiveRecord::Migration[6.0]
       t.string :race_type
       t.string :experience_level
       t.string :duration
-      t.references :race, null: false, foreign_key: true
+      t.string :description
+      t.string :img_link
 
       t.timestamps
     end

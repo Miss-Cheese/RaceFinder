@@ -1,4 +1,4 @@
-<h1>Race Profile</h1>
+<h1>Race Page</h1>
 
 Name: <%= @race.name %><br><br>
 Distance: <%= @race.race_type %><br><br>
@@ -9,6 +9,9 @@ Location: <%= @race.location %><br><br>
     <%= button_to 'Sign up for this race!', "/races/#{@race.id}/sign_user_up" %>
 <% elsif @current_user.races.any?  {|race| race == @race} %>
     <%= link_to "Delete race", @race, method: "delete" %>
-<% end %>
+<% end %><br>
+<img src="<%= @race.img_url %>" height="400">
+
 <hr>
 <%= link_to 'Back to all races', races_path %>
+

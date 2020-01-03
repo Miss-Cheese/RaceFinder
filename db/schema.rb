@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_202610) do
+ActiveRecord::Schema.define(version: 2020_01_03_154857) do
 
   create_table "races", force: :cascade do |t|
     t.string "name"
     t.string "race_type"
     t.string "date"
     t.string "location"
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,18 +49,24 @@ ActiveRecord::Schema.define(version: 2020_01_02_202610) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "training_plan_races", force: :cascade do |t|
+    t.integer "training_plan_id"
+    t.integer "race_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "training_plans", force: :cascade do |t|
     t.string "name"
     t.string "race_type"
     t.string "experience_level"
     t.string "duration"
-    t.integer "race_id", null: false
+    t.string "description"
+    t.string "img_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["race_id"], name: "index_training_plans_on_race_id"
   end
 
   add_foreign_key "runner_races", "races"
   add_foreign_key "runner_races", "runners"
-  add_foreign_key "training_plans", "races"
 end
