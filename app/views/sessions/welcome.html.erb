@@ -1,9 +1,19 @@
+<div id="welcome-page">
+
+<div id="welcome-page-text-box">
 <h1> Welcome! </h1>
 <h4> Please log in: </h4>
 
-<%= form_tag ({controller: 'sessions', action: 'create'}) do %>
+<div id="welcome-error"><% if flash[:notice] %>
+<font color="red"><%= flash[:notice] %></font color>
+<% end %></div>
+<br/>
+<div><%= form_tag ({controller: 'sessions', action: 'create'}) do %>
     <input name=name>
     <input type=submit value='login'>
-<% end %><br>
+<% end %></div><br>
 
-First time here? <%= link_to "Create an account.", signup_path %>
+<p> First time here? <%= link_to "Create an account.", signup_path %></p>
+</div>
+
+</div>

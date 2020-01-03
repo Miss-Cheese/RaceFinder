@@ -6,8 +6,8 @@ Birthday:<%= @runner.birthday %><br><br>
 Location: <%= @runner.location_city %>, <%= @runner.location_country %><br><br>
 Experience Level: <%= @runner.experience_level %><br><br>
 
-<%= button_to "EDIT", edit_runner_path(@runner), method: :get %>
-<%= button_to "DELETE", runner_path(@runner), method: :delete %><br>
+<%= button_to "Edit profile", edit_runner_path(@runner), method: :get %>
+<%= button_to "Delete profile", runner_path(@runner), method: :delete %><br>
 
 <% if @runner.races.any? %>
 You have signed up for these races:
