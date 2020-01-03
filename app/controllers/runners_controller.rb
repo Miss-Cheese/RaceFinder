@@ -17,12 +17,14 @@ class RunnersController < ApplicationController
     end
 
     def create
-        @runner = Runner.create(runner_params)
+        @runner = Runner.new(runner_params)
         if @runner.valid?
-            redirect_to runner_path(@runner)
+            @runner = Runner.create(runner_params)
+            session[:name] = @runner.name
+            redirect_to home_path
         else
             flash[:messages] = @runner.errors.full_messages
-            redirect_to new_runner_path
+            redirect_to signup_path
         end
     end
 
@@ -34,7 +36,7 @@ class RunnersController < ApplicationController
         @runner = Runner.find(params[:id])
         @runner.update(runner_params)
         if @runner.valid?
-            redirect_to runner_path(@runner)
+            redirect_to profile_path
         else
             flash[:messages] = @runner.errors.full_messages
             redirect_to edit_runner_path
