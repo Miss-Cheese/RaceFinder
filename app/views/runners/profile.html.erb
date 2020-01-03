@@ -9,19 +9,26 @@ Experience Level: <%= @runner.experience_level %><br><br>
 <%= button_to "EDIT", edit_runner_path(@runner), method: :get %>
 <%= button_to "DELETE", runner_path(@runner), method: :delete %><br>
 
+<% if @runner.races.any? %>
 You have signed up for these races:
 <ul>
 <% @runner.races.each do |race| %>
     <li><%= link_to race.name, race_path(race) %></li>
     <% end %>
 </ul>
+<% else %>
+You are currently not signed up for any races<br/><br/>
+<% end %>
 
+<% if @runner.training_plans.any? %>
 You enrolled into these training plans:
 <ul>
 <% @runner.training_plans.each do |plan| %>
     <li><%= link_to plan.name, training_plan_path(plan) %></li>
     <% end %>
 </ul>
-
+<% else %>
+You are currently not signed up for any training plans
+<% end %>
 <hr>
 <%= link_to 'Back to home', home_path %>
