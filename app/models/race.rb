@@ -6,5 +6,4 @@ class Race < ApplicationRecord
     def sign_up_for_race(runner)
         self.runner_races.create(runner_id: runner.id)
     end
-
 end

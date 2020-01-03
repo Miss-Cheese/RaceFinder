@@ -5,6 +5,7 @@ class RacesController < ApplicationController
     end
 
     def show
+        @current_user = current_user
         @race = Race.find(params[:id])
     end
 
@@ -14,4 +15,10 @@ class RacesController < ApplicationController
         render "/training_plans/dashboard.html.erb"
     end
 
+    def destroy
+        @race = Race.find(params[:id])
+        @runner = current_user
+        @runner.races.delete(@race)
+        redirect_to runner_path
+    end
 end

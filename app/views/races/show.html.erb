@@ -5,7 +5,10 @@ Distance: <%= @race.race_type %><br><br>
 Date: <%= @race.date %><br><br>
 Location: <%= @race.location %><br><br>
 
-<%= button_to 'Sign up for this race!', "/races/#{@race.id}/sign_user_up" %>
-
+<% if @current_user.races.none?  {|race| race == @race} %>
+    <%= button_to 'Sign up for this race!', "/races/#{@race.id}/sign_user_up" %>
+<% elsif @current_user.races.any?  {|race| race == @race} %>
+    <%= link_to "Delete race", @race, method: "delete" %>
+<% end %>
 <hr>
 <%= link_to 'Back to all races', races_path %>
