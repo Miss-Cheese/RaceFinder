@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :training_plan_races
   resources :runner_plans
   resources :runner_races
   resources :training_plans
