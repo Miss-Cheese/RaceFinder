@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "races.scss";
+ @import "runner_plans.scss";
+ @import "runner_races.scss";
+ @import "runners.scss";
+ @import "sessions.scss";
+ @import "training_plans.scss";
