@@ -6,8 +6,10 @@ Experience Level:<%= @trainingplan.experience_level %><br><br>
 Duration: <%= @trainingplan.duration %><br><br>
 
 <!-- button to choose this training plan -->
-
-<%= button_to 'Choose this training plan!', "/training_plans/#{@trainingplan.id}/sign_user_up" %>
-
+<% if @current_user.training_plans.none?  {|plan| plan == @trainingplan} %>
+    <%= button_to 'Choose this training plan!', "/training_plans/#{@trainingplan.id}/sign_user_up" %>
+<% elsif @current_user.training_plans.any?  {|plan| plan == @trainingplan} %>
+    <%= link_to "Delete training plan", @trainingplan, method: "delete" %>
+<% end %>
 <hr>
 <%= link_to 'Back to all training plans', training_plans_path %>

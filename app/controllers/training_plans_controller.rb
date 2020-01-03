@@ -5,6 +5,7 @@ class TrainingPlansController < ApplicationController
     end
 
     def show
+        @current_user = current_user
         @trainingplan = TrainingPlan.find(params[:id])
     end
 
@@ -16,5 +17,12 @@ class TrainingPlansController < ApplicationController
         byebug
         @trainingplan.sign_up_for_plan(current_user)
         redirect_to runner_path(current_user)
+    end
+
+    def destroy
+        @trainingplan = TrainingPlan.find(params[:id])
+        @runner = current_user
+        @runner.training_plans.delete(@trainingplan)
+        redirect_to runner_path
     end
 end
