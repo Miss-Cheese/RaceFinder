@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     end
 
     def home
-        redirect_to "/welcome" unless session[:name]
+        # redirect_to "/welcome" unless session[:name]
     end
 
     def destroy
